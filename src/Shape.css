@@ -1,0 +1,25 @@
+.shape {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  cursor: grab;
+}
+
+.shape.circle {
+  border-radius: 50%;
+  background-color: blue;
+}
+
+.shape.square {
+  background-color: green;
+}
+
+.shape.hexagon {
+  background-color: orange;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.shape.triangle {
+  background-color: red;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
