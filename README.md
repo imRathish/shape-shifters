@@ -1,12 +1,30 @@
-# React + Vite
+# Drag-and-Drop Shape Transformation Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive, single-page React application with **drag-and-drop** functionality where shapes transform based on the quadrant they are dropped into.
 
-Currently, two official plugins are available:
+## 📂 Project Overview
+The application layout is divided into four quadrants:
+- **Top Left:** Shapes remain circles.
+- **Top Right:** Shapes transform into hexagons.
+- **Bottom Left:** Shapes transform into squares.
+- **Bottom Right:** Shapes transform into triangles.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+When the app loads, **five draggable circles** are displayed in the **Top Left quadrant**. Shapes can be dragged across quadrants, instantly transforming based on where they are dropped.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+- ReactJS
+- react-dnd for drag-and-drop support
+- HTML5 Backend (via `react-dnd-html5-backend`)
+- CSS Grid for responsive quadrant layout
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/imRathish/shape-shifters.git
+cd shape-shifters
+npm install
+npm run dev
