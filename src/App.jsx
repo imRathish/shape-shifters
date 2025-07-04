@@ -11,14 +11,30 @@ const initialShapes = [
 ];
 
 const App = () => {
-  const [shapes,] = useState(initialShapes);
+  const [shapes, setShapes] = useState(initialShapes);
+
+  // Update shape type based on the target quadrant
+  const handleDrop = (shapeId, targetQuadrant) => {
+    setShapes((prevShapes) =>
+      prevShapes.map((shape) => {
+        if (shape.id === shapeId) {
+          let newType = 'circle';
+          if (targetQuadrant === 'topRight') newType = 'hexagon';
+          else if (targetQuadrant === 'bottomLeft') newType = 'square';
+          else if (targetQuadrant === 'bottomRight') newType = 'triangle';
+          return { ...shape, type: newType };
+        }
+        return shape;
+      })
+    );
+  };
 
   return (
     <div className="app">
-      <Quadrant position="topLeft" shapes={shapes}/>
-      <Quadrant position="topRight" shapes={shapes}/>
-      <Quadrant position="bottomLeft" shapes={shapes}/>
-      <Quadrant position="bottomRight" shapes={shapes}/>
+      <Quadrant position="topLeft" shapes={shapes} onDrop={handleDrop} />
+      <Quadrant position="topRight" shapes={shapes} onDrop={handleDrop} />
+      <Quadrant position="bottomLeft" shapes={shapes} onDrop={handleDrop} />
+      <Quadrant position="bottomRight" shapes={shapes} onDrop={handleDrop} />
     </div>
   );
 };

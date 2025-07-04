@@ -6,3 +6,7 @@
   justify-content: center;
   align-items: center;
 }
+
+.highlight {
+  background-color: #f0f0f0;
+}
