@@ -1,0 +1,8 @@
+.quadrant {
+  border: 1px solid #000;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
